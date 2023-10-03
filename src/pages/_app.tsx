@@ -1,6 +1,7 @@
 import { wrapper } from "@/lib/redux";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -14,6 +15,7 @@ export default function App({ Component, ...rest }: AppProps) {
     <Provider store={store}>
       <Component {...props.pageProps} />
       <Loading />
+      <Analytics />
     </Provider>
   );
 }
