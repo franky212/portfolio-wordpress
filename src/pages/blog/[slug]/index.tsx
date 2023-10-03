@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
         slug: post.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -43,11 +43,11 @@ const Post = ({ post }: any) => {
           autoPlay
           loop
           muted
-          poster="https://www.frankdelaguila.com/wp-content/uploads/2023/09/Screen-Shot-2023-09-26-at-11.49.22-PM.png"
+          poster="https://wordpress-1110286-3894329.cloudwaysapps.com/wp-content/uploads/2023/09/Screen-Shot-2023-09-26-at-11.49.22-PM.png"
           className="w-screen h-screen object-cover top-0 left-0 bottom-0 right-0"
         >
           <source
-            src="https://www.frankdelaguila.com/wp-content/uploads/2023/09/video-2160p.mp4"
+            src="https://wordpress-1110286-3894329.cloudwaysapps.com/wp-content/uploads/2023/09/video-2160p.mp4"
             type="video/mp4"
           ></source>
         </video>
@@ -58,7 +58,7 @@ const Post = ({ post }: any) => {
       </div>
       <div className="flex flex-col md:flex-row items-center my-10 text-center md:w-3/4 mx-auto">
         <img
-          src="https://www.frankdelaguila.com/wp-content/uploads/2023/09/frankdelaguila-headshot.jpeg"
+          src="https://wordpress-1110286-3894329.cloudwaysapps.com/wp-content/uploads/2023/09/frankdelaguila-headshot.jpeg"
           alt="Photo of Frank Delaguila - Glasses, Moustache, Hat, smiling"
           className="block w-1/3 md:w-1/12 rounded-full border-2 border-solid border-primary"
         ></img>
