@@ -28,6 +28,7 @@ export const getStaticProps = wrapper.getStaticProps(
       props: {
         post: post.data[0],
       },
+      revalidate: 60,
     };
   }
 );
