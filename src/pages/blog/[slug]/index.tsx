@@ -19,19 +19,37 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = wrapper.getStaticProps(
-  (store) => async (context) => {
-    store.dispatch(getPost.initiate(context?.params?.slug));
-    const [post] = await Promise.all(store.dispatch(getRunningQueriesThunk()));
+const addRevalidateAndRedux = async (
+  props: any,
+  reduxStaticProps: any,
+  revalidateSeconds = 50
+) => {
+  const getStaticProps = await reduxStaticProps(props);
+  getStaticProps.revalidate = revalidateSeconds;
+  return getStaticProps;
+};
 
-    return {
-      props: {
-        post: post.data[0],
-      },
-      revalidate: 60,
-    };
-  }
-);
+export const getStaticProps = async (props: any) =>
+  addRevalidateAndRedux(
+    props,
+    wrapper.getStaticProps((store) => async (context) => {
+      store.dispatch(getPost.initiate(context?.params?.slug));
+      const [post] = await Promise.all(
+        store.dispatch(getRunningQueriesThunk())
+      );
+
+      return {
+        props: {
+          post: post.data[0],
+        },
+        revalidate: 60,
+      };
+    })
+  );
+
+// export const getStaticProps = wrapper.getStaticProps(
+//   (store) => async (context) => {}
+// );
 
 const Post = ({ post }: any) => {
   const dateUploaded = new Date(post.date).toDateString();
