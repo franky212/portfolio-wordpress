@@ -4,6 +4,7 @@ import { getPost, getPosts, getRunningQueriesThunk } from "@/services/posts";
 import { wrapper, reduxStore } from "@/lib/redux";
 import Internal from "@/components/common/Internal";
 import ScrollDown from "@/components/common/scrollDown";
+import { revalidatePath } from "next/cache";
 
 export const getStaticPaths = async () => {
   const store = reduxStore();
@@ -38,7 +39,7 @@ export const getStaticProps = wrapper.getStaticProps(
       props: {
         post: post.data[0],
       },
-      revalidate: 60,
+      revalidate: 50,
     };
   }
 );

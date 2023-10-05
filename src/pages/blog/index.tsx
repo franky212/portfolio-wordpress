@@ -14,6 +14,7 @@ export const getStaticProps = wrapper.getStaticProps(
       props: {
         posts: posts.data,
       },
+      revalidate: 50,
     };
   }
 );

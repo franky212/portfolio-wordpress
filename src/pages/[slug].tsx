@@ -27,7 +27,7 @@ export const getStaticProps = wrapper.getStaticProps(
       props: {
         page: page.data[0],
       },
-      revalidate: 60,
+      revalidate: 50,
     };
   }
 );
