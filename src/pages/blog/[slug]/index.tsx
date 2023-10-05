@@ -29,27 +29,19 @@ const addRevalidateAndRedux = async (
   return getStaticProps;
 };
 
-export const getStaticProps = async (props: any) =>
-  addRevalidateAndRedux(
-    props,
-    wrapper.getStaticProps((store) => async (context) => {
-      store.dispatch(getPost.initiate(context?.params?.slug));
-      const [post] = await Promise.all(
-        store.dispatch(getRunningQueriesThunk())
-      );
+export const getStaticProps = wrapper.getStaticProps(
+  (store) => async (context) => {
+    store.dispatch(getPost.initiate(context?.params?.slug));
+    const [post] = await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-      return {
-        props: {
-          post: post.data[0],
-        },
-        revalidate: 60,
-      };
-    })
-  );
-
-// export const getStaticProps = wrapper.getStaticProps(
-//   (store) => async (context) => {}
-// );
+    return {
+      props: {
+        post: post.data[0],
+      },
+      revalidate: 60,
+    };
+  }
+);
 
 const Post = ({ post }: any) => {
   const dateUploaded = new Date(post.date).toDateString();
