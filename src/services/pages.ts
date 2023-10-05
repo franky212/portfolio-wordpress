@@ -10,12 +10,15 @@ export const pagesApi: any = createApi({
       return action.payload[reducerPath]
     }
   },
+  tagTypes: ['Pages'],
   endpoints: (builder) => ({
     getPages: builder.query({
-      query: () => `/pages${WORDPRESS_POSTS_FIELD_FILTERS}`
+      query: () => `/pages${WORDPRESS_POSTS_FIELD_FILTERS}`,
+      providesTags: ['Pages'],
     }),
     getPage: builder.query({
-      query: (slug) => `/pages${WORDPRESS_POST_FIELD_FILTERS}&slug=${slug}`
+      query: (slug) => `/pages${WORDPRESS_POST_FIELD_FILTERS}&slug=${slug}`,
+      providesTags: ['Pages'],
     })
   })
 });

@@ -10,15 +10,19 @@ export const postsApi: any = createApi({
       return action.payload[reducerPath]
     }
   },
+  tagTypes: ['Posts', 'Image', 'Post'],
   endpoints: (builder) => ({
     getPostImage: builder.query({
-      query: (imageID) => `/media/${imageID}`
+      query: (imageID) => `/media/${imageID}`,
+      providesTags: ['Image'],
     }),
     getPosts: builder.query({
-      query: () => `/posts${WORDPRESS_POSTS_FIELD_FILTERS}`
+      query: () => `/posts${WORDPRESS_POSTS_FIELD_FILTERS}`,
+      providesTags: ['Posts'],
     }),
     getPost: builder.query({
-      query: (slug) => `/posts${WORDPRESS_POST_FIELD_FILTERS}&slug=${slug}`
+      query: (slug) => `/posts${WORDPRESS_POST_FIELD_FILTERS}&slug=${slug}`,
+      providesTags: ['Posts'],
     })
   })
 });
