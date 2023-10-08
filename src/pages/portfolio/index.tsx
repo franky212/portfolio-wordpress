@@ -80,9 +80,9 @@ export default function Portfolio({ projects }: any): JSX.Element {
           ))}
         </Slider>
         <div className="md:w-3/4 mt-6 md:mx-auto">
-          <h1 className="flex flex-col md:items-center text-center md:text-left text-4xl md:text-[64px] text-primary md:mb-6 font-sans">
-            {project?.acm_fields?.title}
-            <div className="inline-flex gap-4 items-center justify-center text-3xl md:mt-6 text-foreground">
+          <h1 className="flex flex-col md:flex-row md:items-center text-center md:text-left text-4xl md:text-[64px] text-primary md:mb-6 font-sans">
+            <span className="leading-[4rem]">{project?.acm_fields?.title}</span>
+            <div className="inline-flex gap-4 items-center justify-center text-3xl mb-4 md:mb-0 text-foreground">
               <FontAwesomeIcon
                 aria-label="Previous Slide"
                 title="Previous Slide"
