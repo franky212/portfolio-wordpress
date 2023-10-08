@@ -98,7 +98,9 @@ export default function Portfolio({ projects }: any): JSX.Element {
             </div>
           </h1>
           <div>
-            {!isLoading ? parser(project?.acm_fields?.portfolioContent) : null}
+            {!isLoading && project.acm_fields
+              ? parser(project?.acm_fields?.portfolioContent, { trim: true })
+              : null}
           </div>
         </div>
       </div>
