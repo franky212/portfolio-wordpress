@@ -131,6 +131,12 @@ const Navigation = (props: any): JSX.Element => {
                     </Link>
                   ))}
                   <Link
+                    href="/portfolio"
+                    className="p-2"
+                  >
+                    Portfolio
+                  </Link>
+                  <Link
                     href="/blog"
                     className="p-2"
                   >
@@ -163,6 +169,14 @@ const Navigation = (props: any): JSX.Element => {
                   </Button>
                 </Link>
               ))}
+              <Link href="/portfolio">
+                <Button
+                  variant={"ghost"}
+                  size={"lg"}
+                >
+                  Portfolio
+                </Button>
+              </Link>
               <Link href="/blog">
                 <Button
                   variant={"ghost"}

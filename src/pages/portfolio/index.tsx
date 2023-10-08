@@ -54,8 +54,6 @@ export default function Portfolio({ projects }: any): JSX.Element {
     const ID = element.querySelector("img")?.dataset.projectid;
     setSelectedID(ID);
   }, [carouselChange]);
-
-  console.log(project);
   return (
     <Internal>
       <div className="container mt-32 mb-12">
