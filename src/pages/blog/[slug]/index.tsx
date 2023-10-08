@@ -20,16 +20,6 @@ export const getStaticPaths = async () => {
   };
 };
 
-const addRevalidateAndRedux = async (
-  props: any,
-  reduxStaticProps: any,
-  revalidateSeconds = 50
-) => {
-  const getStaticProps = await reduxStaticProps(props);
-  getStaticProps.revalidate = revalidateSeconds;
-  return getStaticProps;
-};
-
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async (context) => {
     store.dispatch(getPost.initiate(context?.params?.slug));

@@ -2,6 +2,8 @@ import { wrapper } from "@/lib/redux";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "@/styles/globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
