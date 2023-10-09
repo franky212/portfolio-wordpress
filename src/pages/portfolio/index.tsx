@@ -12,7 +12,11 @@ import Internal from "@/components/common/Internal";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async (context) => {
@@ -78,30 +82,46 @@ export default function Portfolio({ projects }: any): JSX.Element {
           ))}
         </Slider>
         <div className="md:w-3/4 mt-6 md:mx-auto">
-          <h1 className="flex flex-col md:flex-row md:items-center text-center md:text-left text-4xl md:text-[64px] text-primary md:mb-6 font-sans">
-            <span className="leading-[4rem]">{project?.acm_fields?.title}</span>
-            <div className="inline-flex gap-4 items-center justify-center text-3xl mb-4 md:mb-0 text-foreground">
+          {!isLoading ? (
+            <>
+              <h1 className="flex flex-col md:flex-row md:items-center text-center md:text-left text-4xl md:text-[64px] text-primary md:mb-6 font-sans">
+                <span className="leading-[4rem]">
+                  {project?.acm_fields?.title}
+                </span>
+                <div className="inline-flex gap-4 items-center justify-center text-3xl mb-4 md:mb-0 text-foreground">
+                  <FontAwesomeIcon
+                    aria-label="Previous Slide"
+                    title="Previous Slide"
+                    onClick={previousSlide}
+                    className="cusor-pointer p-4"
+                    icon={faArrowLeft}
+                  />
+                  <FontAwesomeIcon
+                    aria-label="Next Slide"
+                    title="Next Slide"
+                    onClick={nextSlide}
+                    className="cusor-pointer p-4"
+                    icon={faArrowRight}
+                  />
+                </div>
+              </h1>
+              <div>
+                {!isLoading && project.acm_fields
+                  ? parser(project?.acm_fields?.portfolioContent, {
+                      trim: true,
+                    })
+                  : null}
+              </div>
+            </>
+          ) : (
+            <div className="text-center">
               <FontAwesomeIcon
-                aria-label="Previous Slide"
-                title="Previous Slide"
-                onClick={previousSlide}
-                className="cusor-pointer p-4"
-                icon={faArrowLeft}
-              />
-              <FontAwesomeIcon
-                aria-label="Next Slide"
-                title="Next Slide"
-                onClick={nextSlide}
-                className="cusor-pointer p-4"
-                icon={faArrowRight}
+                spin
+                size="2xl"
+                icon={faSpinner}
               />
             </div>
-          </h1>
-          <div>
-            {!isLoading && project.acm_fields
-              ? parser(project?.acm_fields?.portfolioContent, { trim: true })
-              : null}
-          </div>
+          )}
         </div>
       </div>
     </Internal>
