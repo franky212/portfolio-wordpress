@@ -83,7 +83,7 @@ export default function Portfolio({ projects }: any): JSX.Element {
           ))}
         </Slider>
         <div className="md:w-3/4 mt-6 md:mx-auto">
-          {!isLoading ? (
+          {!isLoading && project.acm_fields ? (
             <>
               <div className="text-center mb-6">
                 <Button
@@ -91,7 +91,7 @@ export default function Portfolio({ projects }: any): JSX.Element {
                   asChild
                 >
                   <Link
-                    href={project.acm_fields.projectLink}
+                    href={project?.acm_fields?.projectLink}
                     target="_blank"
                   >
                     View Project
