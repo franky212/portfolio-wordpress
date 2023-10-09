@@ -17,6 +17,7 @@ import {
   faArrowRight,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "@/components/ui/button";
 
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async (context) => {
@@ -84,8 +85,21 @@ export default function Portfolio({ projects }: any): JSX.Element {
         <div className="md:w-3/4 mt-6 md:mx-auto">
           {!isLoading ? (
             <>
+              <div className="text-center mb-6">
+                <Button
+                  className=""
+                  asChild
+                >
+                  <Link
+                    href={project.acm_fields.projectLink}
+                    target="_blank"
+                  >
+                    View Project
+                  </Link>
+                </Button>
+              </div>
               <h1 className="flex flex-col md:flex-row md:items-center text-center md:text-left text-4xl md:text-[64px] text-primary md:mb-6 font-sans">
-                <span className="leading-[4rem]">
+                <span className="leading-[4rem] font-bold">
                   {project?.acm_fields?.title}
                 </span>
                 <div className="inline-flex gap-4 items-center justify-center text-3xl mb-4 md:mb-0 text-foreground">
