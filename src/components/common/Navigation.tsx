@@ -121,15 +121,12 @@ const Navigation = (props: any): JSX.Element => {
                   >
                     Home
                   </Link>
-                  {pages?.map((page: any) => (
-                    <Link
-                      key={page.id}
-                      href={`/${page.slug}`}
-                      className="p-2"
-                    >
-                      {page.title.rendered}
-                    </Link>
-                  ))}
+                  <Link
+                    href="/about"
+                    className="p-2"
+                  >
+                    About
+                  </Link>
                   <Link
                     href="/portfolio"
                     className="p-2"
@@ -155,20 +152,14 @@ const Navigation = (props: any): JSX.Element => {
                   Home
                 </Button>
               </Link>
-              {pages?.map((page: any) => (
-                <Link
-                  key={page.id}
-                  href={`/${page.slug}`}
-                  className="w-full"
+              <Link href="/about">
+                <Button
+                  variant={"ghost"}
+                  size={"lg"}
                 >
-                  <Button
-                    size={"lg"}
-                    variant={"ghost"}
-                  >
-                    {page.title.rendered}
-                  </Button>
-                </Link>
-              ))}
+                  About
+                </Button>
+              </Link>
               <Link href="/portfolio">
                 <Button
                   variant={"ghost"}
