@@ -33,6 +33,7 @@ export const getStaticProps = wrapper.getStaticProps(
 );
 
 const Page = ({ page }: any) => {
+  console.log("hello");
   return (
     <Internal>
       <div className="container my-32">
