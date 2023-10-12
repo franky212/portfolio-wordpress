@@ -60,6 +60,7 @@
 }
 
 @layer utilities {
+  /* Post Content */
   .post-content h2.wp-block-heading {
     @apply text-4xl font-bold mb-4 text-primary;
   }
@@ -69,8 +70,13 @@
   .post-content img, video {
     @apply block w-full mb-10;
   }
+  /* END Post Content */
 
-  .post-content p {
+  .post-content p,
+  .page-content p {
     @apply mb-4 text-lg text-foreground leading-8;
   }
+
+  /* Page Content */
+  /* END Page Content */
 }

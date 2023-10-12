@@ -15,13 +15,9 @@ import { useMediaQuery } from "react-responsive";
 
 import { Skeleton } from "../ui/skeleton";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "../ui/sheet";
-import { useGetPagesQuery } from "@/services/pages";
 import { cn } from "@/utils/utils";
 import { Button } from "../ui/button";
-
-const styles = {
-  fontFamily: "'Ubuntu', sans-serif",
-};
+import { useGetMenuQuery } from "@/services/navigation";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -58,7 +54,7 @@ const Navigation = (props: any): JSX.Element => {
       setColorChange(false);
     }
   };
-  const { data: pages, isSuccess, isLoading } = useGetPagesQuery();
+  const { data: menu, isSuccess, isLoading } = useGetMenuQuery("primary-menu");
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   useEffect(() => {
     window.addEventListener("scroll", changeNavbarColor);
@@ -86,7 +82,7 @@ const Navigation = (props: any): JSX.Element => {
               </p>
             </div>
           </Link>
-          {isTabletOrMobile ? (
+          {isTabletOrMobile || menu?.items.length >= 4 ? (
             <Sheet>
               <SheetTrigger asChild>
                 <Button className="bg-gray-700">
@@ -121,12 +117,15 @@ const Navigation = (props: any): JSX.Element => {
                   >
                     Home
                   </Link>
-                  <Link
-                    href="/about"
-                    className="p-2"
-                  >
-                    About
-                  </Link>
+                  {menu.items?.map((link: any) => (
+                    <Link
+                      key={link.ID}
+                      href={`/${link.slug}`}
+                      className="p-2"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
                   <Link
                     href="/portfolio"
                     className="p-2"
@@ -152,14 +151,20 @@ const Navigation = (props: any): JSX.Element => {
                   Home
                 </Button>
               </Link>
-              <Link href="/about">
-                <Button
-                  variant={"ghost"}
-                  size={"lg"}
+              {menu?.items.map((link: any) => (
+                <Link
+                  key={link.ID}
+                  href={`/${link.slug}`}
+                  className="w-full"
                 >
-                  About
-                </Button>
-              </Link>
+                  <Button
+                    size={"lg"}
+                    variant={"ghost"}
+                  >
+                    {link.title}
+                  </Button>
+                </Link>
+              ))}
               <Link href="/portfolio">
                 <Button
                   variant={"ghost"}
