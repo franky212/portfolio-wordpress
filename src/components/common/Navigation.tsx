@@ -69,8 +69,7 @@ const Navigation = (props: any): JSX.Element => {
         <>
           <Link
             href="/"
-            className="p-2"
-            style={{ fontFamily: "'Ubuntu', sans-serif" }}
+            className="p-2 font-sans"
           >
             <div className="flex gap-2 md:gap-4 items-center">
               <FontAwesomeIcon

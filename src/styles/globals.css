@@ -64,11 +64,18 @@
   .post-content h2.wp-block-heading {
     @apply text-4xl font-bold mb-4 text-primary;
   }
-  .post-content h3.wp-block-heading {
+  .post-content h3.wp-block-heading,
+  .page-content h3 {
     @apply text-2xl font-bold mb-4;
   }
-  .post-content img, video {
-    @apply block w-full mb-10;
+  .post-content img, video,
+  .page-content img, video {
+    @apply block w-full my-10;
+  }
+
+  .post-content img,
+  .page-content img {
+    @apply rounded-lg;
   }
   /* END Post Content */
 

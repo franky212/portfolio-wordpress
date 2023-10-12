@@ -36,7 +36,7 @@ const Page = ({ page }: any) => {
   console.log(page);
   return (
     <Internal>
-      <div className="container my-24 md:my-36 page-content">
+      <div className="my-24 md:my-36 w-3/4 mx-auto page-content">
         <h1 className="text-4xl md:text-[64px] text-primary md:mb-6 font-sans font-bold">
           {page.title.rendered}
         </h1>

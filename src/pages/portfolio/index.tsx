@@ -61,7 +61,13 @@ export default function Portfolio({ projects }: any): JSX.Element {
   }, [carouselChange]);
   return (
     <Internal>
-      <div className="container mt-32 mb-12">
+      <div className="container mt-28 md:mt-32 mb-8 md:mb-16">
+        <h1 className="text-4xl md:text-[64px] mb-4 font-sans font-bold">
+          Portfolio
+        </h1>
+        <p>Here's all my latest projects, and the technologies used!</p>
+      </div>
+      <div className="container mb-12">
         {/*
           // @ts-ignore */}
         <Slider
