@@ -33,7 +33,6 @@ export const getStaticProps = wrapper.getStaticProps(
 );
 
 const Page = ({ page }: any) => {
-  console.log(page);
   return (
     <Internal>
       <div className="my-24 md:my-36 w-3/4 mx-auto page-content">

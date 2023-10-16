@@ -65,7 +65,7 @@ export default function Portfolio({ projects }: any): JSX.Element {
         <h1 className="text-4xl md:text-[64px] mb-4 font-sans font-bold">
           Portfolio
         </h1>
-        <p>Here's all my latest projects, and the technologies used!</p>
+        <p>Here&apos;s all my latest projects, and the technologies used!</p>
       </div>
       <div className="container mb-12">
         {/*
