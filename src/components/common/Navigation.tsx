@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";

@@ -20,7 +20,7 @@ const Loading = (): JSX.Element => {
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
   return (
     <div
       className={`${
