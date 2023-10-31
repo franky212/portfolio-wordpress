@@ -22,7 +22,7 @@ export default function Home(): JSX.Element {
             your website built!
           </p>
           <Button asChild>
-            <Link href="/portfolio">Hiring a freelancer?</Link>
+            <Link href="/freelance">Hiring a freelancer?</Link>
           </Button>
         </div>
         <div className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-black">
