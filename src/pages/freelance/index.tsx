@@ -22,7 +22,7 @@ export default function Freelance(): JSX.Element {
       >
         <div className="absolute text-center inset-y-auto inset-x-0">
           <h1 className="text-center text-4xl font-bold text-foreground mb-4">
-            Let's Build Your Website!
+            Let&apos;s Build Your Website!
           </h1>
           <Button asChild>
             <Link
@@ -50,16 +50,17 @@ export default function Freelance(): JSX.Element {
           <p className="font-roboto text-left md:text-center font-light max-w-[919px] mx-auto leading-loose">
             Effective requirement gather is the foundation of a successful web
             design project. It beings with in-depth research and client
-            consultations to understand the project's goals, target audience,
-            and unique objectives. This crucial process involves gathering
-            information, such as content, design preferences, and technical
-            specifications, while considering SEO best practices to ensure
-            search engine visibility. Thoroughly documented requirements serve
-            as a roadmap for the design phase, resulting in a user-friendly,
-            visually appealing, and search engine optimized website that aligns
-            with the clients vision and objectives. Proper requirement gathering
-            ensures a seamless and efficient web design process, ultimately
-            benefiting the project's online presence and search engine rankings.
+            consultations to understand the project&apos;s goals, target
+            audience, and unique objectives. This crucial process involves
+            gathering information, such as content, design preferences, and
+            technical specifications, while considering SEO best practices to
+            ensure search engine visibility. Thoroughly documented requirements
+            serve as a roadmap for the design phase, resulting in a
+            user-friendly, visually appealing, and search engine optimized
+            website that aligns with the clients vision and objectives. Proper
+            requirement gathering ensures a seamless and efficient web design
+            process, ultimately benefiting the project&apos;s online presence
+            and search engine rankings.
           </p>
         </section>
 
@@ -127,7 +128,7 @@ export default function Freelance(): JSX.Element {
       >
         <div className="text-center">
           <h1 className="text-center text-4xl font-bold text-foreground mb-2">
-            Let's Build Your Website!
+            Let&apos;s Build Your Website!
           </h1>
           <p>
             I will be contacting your shortly to discuss your exciting project
