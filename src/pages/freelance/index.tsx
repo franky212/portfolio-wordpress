@@ -102,7 +102,7 @@ export default function Freelance(): JSX.Element {
             width={500}
             height={500}
           />
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="font-bold font-sans text-4xl mb-4">
               Straight to implementation!
             </h2>
