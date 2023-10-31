@@ -131,7 +131,7 @@ export default function Freelance(): JSX.Element {
             Let&apos;s Build Your Website!
           </h1>
           <p>
-            I will be contacting your shortly to discuss your exciting project
+            I will be contacting you shortly to discuss your exciting project
             further!
           </p>
           <Button
