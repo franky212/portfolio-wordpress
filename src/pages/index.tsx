@@ -18,8 +18,7 @@ export default function Home(): JSX.Element {
             and Web Designer
           </h1>
           <p className="md:w-1/2 opacity-60 text-white my-2">
-            I&apos;m looking for freelance clients. Let&apos;s talk, and get
-            your website built!
+            Need a custom website? Let&apos;s talk!
           </p>
           <Button asChild>
             <Link href="/freelance">Hiring a freelancer?</Link>

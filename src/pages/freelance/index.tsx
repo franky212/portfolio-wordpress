@@ -48,8 +48,8 @@ export default function Freelance(): JSX.Element {
             First, lets talk about your project!
           </h2>
           <p className="font-roboto text-left md:text-center font-light max-w-[919px] mx-auto leading-loose">
-            Effective requirement gather is the foundation of a successful web
-            design project. It beings with in-depth research and client
+            Effective requirement gathering is the foundation of a successful
+            web design project. It beings with in-depth research and client
             consultations to understand the project&apos;s goals, target
             audience, and unique objectives. This crucial process involves
             gathering information, such as content, design preferences, and
@@ -130,10 +130,6 @@ export default function Freelance(): JSX.Element {
           <h1 className="text-center text-4xl font-bold text-foreground mb-2">
             Let&apos;s Build Your Website!
           </h1>
-          <p>
-            I will be contacting you shortly to discuss your exciting project
-            further!
-          </p>
           <Button
             asChild
             className="mt-2"
