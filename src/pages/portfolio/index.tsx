@@ -70,15 +70,9 @@ export default function Portfolio({ projects }: any): JSX.Element {
       <div className="container mb-12">
         {/*
           // @ts-ignore */}
-        <Slider
-          {...sliderSettings}
-          ref={customSlider}
-        >
+        <Slider {...sliderSettings} ref={customSlider}>
           {projects.map(({ id, acm_fields }: any) => (
-            <div
-              className="md:px-2 outline-none"
-              key={id}
-            >
+            <div className="md:px-2 outline-none" key={id}>
               <img
                 alt={acm_fields?.featured_media?.alt_text}
                 data-projectid={id}
@@ -92,14 +86,8 @@ export default function Portfolio({ projects }: any): JSX.Element {
           {!isLoading && project.acm_fields ? (
             <>
               <div className="text-center mb-6">
-                <Button
-                  className=""
-                  asChild
-                >
-                  <Link
-                    href={project?.acm_fields?.projectLink}
-                    target="_blank"
-                  >
+                <Button className="font-bold" asChild>
+                  <Link href={project?.acm_fields?.projectLink} target="_blank">
                     View Project
                   </Link>
                 </Button>
@@ -135,11 +123,7 @@ export default function Portfolio({ projects }: any): JSX.Element {
             </>
           ) : (
             <div className="text-center">
-              <FontAwesomeIcon
-                spin
-                size="2xl"
-                icon={faSpinner}
-              />
+              <FontAwesomeIcon spin size="2xl" icon={faSpinner} />
             </div>
           )}
         </div>

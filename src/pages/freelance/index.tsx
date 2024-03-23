@@ -24,11 +24,8 @@ export default function Freelance(): JSX.Element {
           <h1 className="text-center text-4xl font-bold text-foreground mb-4">
             Let&apos;s Build Your Website!
           </h1>
-          <Button asChild>
-            <Link
-              href="https://forms.gle/xuwgKSHqhPWrt2Zo8"
-              target="_blank"
-            >
+          <Button className="font-bold" asChild>
+            <Link href="https://forms.gle/xuwgKSHqhPWrt2Zo8" target="_blank">
               Onboarding Form
             </Link>
           </Button>
@@ -130,14 +127,8 @@ export default function Freelance(): JSX.Element {
           <h1 className="text-center text-4xl font-bold text-foreground mb-2">
             Let&apos;s Build Your Website!
           </h1>
-          <Button
-            asChild
-            className="mt-2"
-          >
-            <Link
-              href="https://forms.gle/xuwgKSHqhPWrt2Zo8"
-              target="_blank"
-            >
+          <Button asChild className="font-bold mt-2">
+            <Link href="https://forms.gle/xuwgKSHqhPWrt2Zo8" target="_blank">
               Onboarding Form
             </Link>
           </Button>
