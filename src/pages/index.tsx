@@ -1,22 +1,24 @@
-"use client";
+'use client';
+import type { ReactElement } from 'react';
+import React from 'react';
+import { Canvas } from '@react-three/fiber';
+import Link from 'next/link';
 
-import { Canvas } from "@react-three/fiber";
-import Link from "next/link";
+import Internal from '@/components/common/Internal';
+import { Button } from '@/components/ui/button';
+import Model from '@/components/common/Model';
 
-import Internal from "@/components/common/Internal";
-import { Button } from "@/components/ui/button";
-import Model from "@/components/common/Model";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faFile, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home(): JSX.Element {
+export default function Home(): ReactElement {
   return (
     <Internal hideFooter>
       <div className="flex flex-col justify-center w-full h-screen relative">
         <div className="container relative z-10">
           <h1 className="text-4xl md:text-[64px] mt-24 md:mt-0 text-primary font-sans font-bold leading-none">
+            Front End <br />
             Software Engineer
             <br />
             and Web Designer
@@ -33,7 +35,7 @@ export default function Home(): JSX.Element {
               Online Resume
             </Link>
           </Button>
-          <Button variant={"secondary"} asChild className="font-bold">
+          <Button variant={'secondary'} asChild className="font-bold">
             <Link href="/freelance">I need a website made!</Link>
           </Button>
           <div className="flex align-center">
@@ -81,8 +83,8 @@ export default function Home(): JSX.Element {
         </div>
         <div className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-black">
           <Canvas shadows camera={{ position: [4, 2, 2] }}>
-            <ambientLight intensity={0.1} />
-            <directionalLight color="white" position={[0, 5, 5]} />
+            <ambientLight />
+            <directionalLight color="white" />
             <Model />
           </Canvas>
         </div>

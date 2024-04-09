@@ -1,8 +1,9 @@
-import parser from "html-react-parser";
+import parser from 'html-react-parser';
 
-import { getPage, getPages, getRunningQueriesThunk } from "@/services/pages";
-import { reduxStore, wrapper } from "@/lib/redux";
-import Internal from "@/components/common/Internal";
+import { getPage, getPages, getRunningQueriesThunk } from '@/services/pages';
+import { reduxStore, wrapper } from '@/lib/redux';
+import Internal from '@/components/common/Internal';
+import { ReactElement } from 'react';
 
 export const getStaticPaths = async () => {
   const store = reduxStore();
@@ -32,7 +33,7 @@ export const getStaticProps = wrapper.getStaticProps(
   }
 );
 
-const Page = ({ page }: any) => {
+const Page = ({ page }: any): ReactElement => {
   return (
     <Internal>
       <div className="my-24 md:my-36 w-3/4 mx-auto page-content">

@@ -1,23 +1,22 @@
-import Link from "next/link";
-import parser from "html-react-parser";
-import Slider from "react-slick";
+import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import parser from 'html-react-parser';
+import Slider from 'react-slick';
 
 import {
   getProjects,
   getRunningQueriesThunk,
   useGetProjectQuery,
-} from "@/services/portfolio";
-import { wrapper } from "@/lib/redux";
-import Internal from "@/components/common/Internal";
-import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from '@/services/portfolio';
+import { wrapper } from '@/lib/redux';
+import Internal from '@/components/common/Internal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowLeft,
   faArrowRight,
   faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@/components/ui/button";
+} from '@fortawesome/free-solid-svg-icons';
+import { Button } from '@/components/ui/button';
 
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async (context) => {
@@ -36,7 +35,7 @@ export const getStaticProps = wrapper.getStaticProps(
 );
 
 export default function Portfolio({ projects }: any): JSX.Element {
-  const [selectedID, setSelectedID] = useState<string | undefined>("");
+  const [selectedID, setSelectedID] = useState<string | undefined>('');
   const [carouselChange, setCarouselChange] = useState<number>(0);
   const { data: project, isLoading } = useGetProjectQuery(selectedID);
   const customSlider = useRef<any>();
@@ -51,12 +50,12 @@ export default function Portfolio({ projects }: any): JSX.Element {
     },
   });
 
-  const nextSlide = () => customSlider.current.slickNext();
-  const previousSlide = () => customSlider.current.slickPrev();
+  const nextSlide = (): void => customSlider.current.slickNext();
+  const previousSlide = (): void => customSlider.current.slickPrev();
 
   useEffect(() => {
-    const element = document.getElementsByClassName("slick-current")[0];
-    const ID = element.querySelector("img")?.dataset.projectid;
+    const element = document.getElementsByClassName('slick-current')[0];
+    const ID = element.querySelector('img')?.dataset.projectid;
     setSelectedID(ID);
   }, [carouselChange]);
   return (
@@ -68,8 +67,6 @@ export default function Portfolio({ projects }: any): JSX.Element {
         <p>Here&apos;s all my latest projects, and the technologies used!</p>
       </div>
       <div className="container mb-12">
-        {/*
-          // @ts-ignore */}
         <Slider {...sliderSettings} ref={customSlider}>
           {projects.map(({ id, acm_fields }: any) => (
             <div className="md:px-2 outline-none" key={id}>
